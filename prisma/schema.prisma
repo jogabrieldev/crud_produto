@@ -1,0 +1,21 @@
+datasource db {
+  provider = "postgresql" 
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+   provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  external_id Int?    @unique
+  name        String
+  price       Float
+  description String   @db.Text
+  category    String
+  image_url   String?  @db.Text // @db.Text ou @db.VarChar(2048)
+
+  @@map("products")
+}
