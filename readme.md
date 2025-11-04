@@ -41,6 +41,6 @@ _ Deletar produtos
 ## Comandos para rodar a aplicação
 ( No caso de ZIP) Extrair o arquivo abrir o terminal na pasta do projeto e rodar.
 git clone 
-cd crud_produto_teste
+cd crud_produto
 docker-compose up --build
 (Acesso a API) http://localhost:8000
